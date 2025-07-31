@@ -4,7 +4,7 @@ version: 1.0.0
 repository: https://github.com/LukGaming/curso_dart_udemy
 
 environment:
-  sdk: ^3.9.0-333.2.beta
+  sdk: ^3.8.0
 
 # Add regular dependencies here.
 dependencies:
