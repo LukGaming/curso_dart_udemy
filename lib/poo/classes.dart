@@ -6,3 +6,9 @@ class Pessoa {
 
   const Pessoa(this.nome, this.peso, this.altura, this.idade);
 }
+
+void main() {
+  final objetoPessoa = Pessoa("Paulo Mendes", 72.5, 183, 27);
+
+  print("Nome paulo: ${objetoPessoa.nome}");
+}
