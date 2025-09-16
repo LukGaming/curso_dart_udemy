@@ -1,16 +1,13 @@
 import 'package:curso_dart_udemy/programacao_assincrona/models/post.dart';
+import 'package:curso_dart_udemy/programacao_assincrona/services/posts_api.dart';
 import 'package:dio/dio.dart';
 
 void main() async {
-  final dio = Dio();
+  final postsApi = PostsApi();
 
-  final response = await dio.get("http://jsonplaceholder.typicode.com/posts");
+  final posts = await postsApi.get();
 
-  print(response.statusCode);
+  final post = await postsApi.getById(97);
 
-  if (response.statusCode == 200) {
-    final List<Post> posts = [];
-    (response.data as List).forEach((post) => posts.add(Post.fromJson(post)));
-    print(posts);
-  }
+  print("post: $post");
 }
