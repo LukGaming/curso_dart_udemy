@@ -1,3 +1,4 @@
+import 'package:curso_dart_udemy/programacao_assincrona/models/post.dart';
 import 'package:dio/dio.dart';
 
 void main() async {
@@ -8,9 +9,8 @@ void main() async {
   print(response.statusCode);
 
   if (response.statusCode == 200) {
-    (response.data as List).forEach((post) {
-      print("---------------");
-      print("Post: $post");
-    });
+    final List<Post> posts = [];
+    (response.data as List).forEach((post) => posts.add(Post.fromJson(post)));
+    print(posts);
   }
 }
