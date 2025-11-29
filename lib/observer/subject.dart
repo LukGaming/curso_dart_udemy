@@ -5,16 +5,19 @@
 //Remova escutadores
 
 //Notifique os escutadores
+
+typedef VoidCallback = void Function();
+
 class Subject {
   bool wasDisposed = false;
 
-  List<void Function()> _observers = [];
+  List<VoidCallback> _observers = []; // callback void
 
-  void addObserver(void Function() observer) {
+  void addObserver(VoidCallback observer) {
     _observers.add(observer);
   }
 
-  void removeObserver(void Function() observer) {
+  void removeObserver(VoidCallback observer) {
     _observers.remove(observer);
   }
 
